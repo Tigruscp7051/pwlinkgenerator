@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgb(245, 243, 243);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.box {
+    height: auto;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 1px 1px 0px 2px rgb(0,0,0,0.05);
+    padding-bottom: 10px;
+}
+label {
+    font-size: 18px;
+    margin-left: 5%;
+}
+.inpLink{
+    height: 20px;
+    width: 90%;
+    margin: 4px 0 0 5%;
+}
+button {
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 60px;
+    background: rgb(255, 0, 132);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 10px 0 0 calc(50% - 30px);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover {
+    background: rgb(255, 51, 156);
+}
+h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.h2 {
+    background: rgb(255, 0, 132);
+    margin-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+}
+.show {
+    height: 25px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 10px;
+    border: 1px solid #000;
+    display: flex;
+}
+.cLink {
+    height: 100%;
+    width: 94%;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+}
+.Ltext {
+    padding: 2px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+}
+.copy {
+    height: 20px;
+    width: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: FontAwesome;
+    padding: 2px 2px 2px 1px;
+    border-left: 1px solid #000;
+}
+.copy:hover {
+    color:  rgb(255, 0, 132);
+}
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="h2">
+            <h2>Link Corrector</h2>
+        </div>
+        <label for="link">
+            Enter Link
+            <input class="inpLink" type="text" name="link" id="link" oninput="Corrector(this.value)" autofocus>
+        </label>
+        <button onclick="Corrector(document.querySelector('#link').value)">
+            Click
+        </button>
+        <div class="show" style="display:none">
+            <div class="cLink">
+                <div class="Ltext">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+const Corrector = (e) => {
+    if (e.length > 0) {
+        var val = e.replace('d1d34p8vz63oiq','d3nzo6itypaz07');
+        val = val.slice(0,val.indexOf('dash'))+'master.m3u8';
+        document.querySelector('.Ltext').innerHTML = val;
+        document.querySelector('.show').style.display = 'block';
+        document.querySelector('.inpLink').value = '';
+        window.open(String(document.querySelector('.Ltext').innerHTML),'_blank');
+    }
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
